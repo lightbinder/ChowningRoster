@@ -4,8 +4,9 @@ $rid = $_GET['rid'];
 require_once("includes/db.php");
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_db);
 
-$query = "SELECT * FROM `roster` WHERE rid=$rid;";
+$query = "SELECT * FROM `roster` WHERE rid=?;";
 $stmt = $con->prepare($query);
+$stmt->bind_param("s", $rid);
 $stmt->execute();
 $stmt->bind_result($rid, $lname, $fname, $sex, $dob, $level, $proglang);
 $stmt->fetch();
@@ -24,7 +25,7 @@ list($dob_year, $dob_month, $dob_day) = split('[/.-]', $dob);
     
     <h1>Modify Student</h1>
     <form action="roster_modify_do.php" method="get">
-      <?php echo "<input type=\"text\" name=\"rid\" value=\"$rid\" style=\"display:none;\"/>\n"; ?>
+      <?php echo "<input type=\"text\" name=\"rid\" value=\"$rid\" style=\"display:none;\" />\n"; ?>
       <?php echo "First Name: <input type=\"text\" name=\"fname\" value=\"$fname\" /><br />\n"; ?>
       <?php echo "Last Name: <input type=\"text\" name=\"lname\" value=\"$lname\" /><br />\n"; ?>
       Sex:

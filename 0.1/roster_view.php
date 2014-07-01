@@ -27,7 +27,7 @@ $stmt->bind_result($rid, $lname, $fname, $sex, $dob, $level, $proglang);
 <?php
 while($stmt->fetch())
 {
-echo "
+	echo "
       <tr>
         <td>$lname</td>
         <td>$fname</td>
@@ -40,7 +40,7 @@ echo "
           <a href=\"roster_delete.php?rid=$rid\">Delete</a>
         </td>
       </tr>
-";
+	";
 }
 
 $stmt->close();

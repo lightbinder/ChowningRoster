@@ -30,7 +30,7 @@ $stmt->bind_result($rid, $lname, $fname, $sex, $dob, $level, $proglang);
 <?php
 while($stmt->fetch())
 {
-echo "
+	echo "
       <tr>
         <td>$lname</td>
         <td>$fname</td>
@@ -39,7 +39,7 @@ echo "
         <td>$level</td>
         <td>$proglang</td>
       </tr>
-";
+	";
 }
 
 $stmt->close();

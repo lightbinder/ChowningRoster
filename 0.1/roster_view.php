@@ -14,7 +14,7 @@ $stmt->bind_result($rid, $lname, $fname, $sex, $dob, $level, $proglang);
   </head>
   <body>
     <h1>View Roster</h1>
-    <table border=1">
+    <table border="1">
       <tr>
         <th>Last Name</th>
         <th>First Name</th>

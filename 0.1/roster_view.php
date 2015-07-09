@@ -36,6 +36,11 @@ while($stmt->fetch())
         <td>$level</td>
         <td>$proglang</td>
         <td>
+          <!-- Assignment of HTTP variables using a hyperlink -->
+            <!-- Directly taking advantage of what a HTML form does when 'Submit' is pressed -->
+            <!-- The links that are printed store the database rid of the individual in the HTTP variable rid -->
+            <!-- This allows the next page to acquire the individual's rid through PHP \$_GET['rid'] (see roster_delete.php) -->
+            <!-- This method saves values between pages -->
           <a href=\"roster_modify.php?rid=$rid\">Modify</a><br />
           <a href=\"roster_delete.php?rid=$rid\">Delete</a>
         </td>

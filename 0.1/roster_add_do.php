@@ -6,6 +6,11 @@ $dob = $_GET['dob_year'] . "-" . $_GET['dob_month'] . "-" . $_GET['dob_day'];
 $level = $_GET['level'];
 $proglang = $_GET['proglang'];
 
+/* require_once() */
+	/* Makes current file act as if selected file's content is in current file */
+	/* Different than require() in that require_once() will only allow the file to be accessed once and not again in the current file */
+	/* Different than include() in that require() will terminate script if file is inaccessible */
+	/* This specific file is added for security and stores sensitive database information in another file in variables that can be used in this file */
 require_once("includes/db.php");
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_db);
 
